@@ -169,6 +169,9 @@ const setting: ProjectConfig = {
   //  Is it possible to embed iframe pages
   canEmbedIFramePage: true,
 
+  //  Is it possible to embed part iframe pages
+  canEmbedPartIFramePage: true,
+
   // Whether to delete unclosed messages and notify when switching the interface
   closeMessageOnSwitch: true,
 

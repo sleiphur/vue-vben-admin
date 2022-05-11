@@ -2,6 +2,7 @@ import type { AppRouteModule } from '/@/router/types';
 
 import { LAYOUT } from '/@/router/constant';
 const IFrame = () => import('/@/views/sys/iframe/FrameBlank.vue');
+const PartIFrame = () => import('/@/views/sys/part-iframe/PartFrameBlank.vue');
 import { t } from '/@/hooks/web/useI18n';
 
 const iframe: AppRouteModule = {
@@ -40,6 +41,23 @@ const iframe: AppRouteModule = {
       component: IFrame,
       meta: {
         title: t('routes.demo.iframe.docExternal'),
+      },
+    },
+    {
+      path: 'partFrame',
+      name: 'PartFrame',
+      component: PartIFrame,
+      meta: {
+        partFrameSrc: 'PartFrame',
+        title: t('routes.demo.iframe.partFrame'),
+      },
+    },
+    {
+      path: 'partFrameNoCahce',
+      name: 'partFrameNoCahce',
+      component: () => import('/@/views/demo/part-frame/PartFrame.vue'),
+      meta: {
+        title: t('routes.demo.iframe.partFrameNoCache'),
       },
     },
   ],

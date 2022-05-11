@@ -129,6 +129,8 @@ export interface ProjectConfig {
   useOpenBackTop: boolean;
   // Is it possible to embed iframe pages
   canEmbedIFramePage: boolean;
+  // Is it possible to embed part iframe pages
+  canEmbedPartIFramePage: boolean;
   // Whether to delete unclosed messages and notify when switching the interface
   closeMessageOnSwitch: boolean;
   // Whether to cancel the http request that has been sent but not responded when switching the interface.

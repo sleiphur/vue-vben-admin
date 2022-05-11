@@ -7,6 +7,15 @@ export type Component<T = any> =
   | (() => Promise<typeof import('*.vue')>)
   | (() => Promise<T>);
 
+import 'vue-router';
+
+declare module 'vue-router' {
+  interface RouteMeta {
+    // part frame src
+    partFrameSrc?: string;
+  }
+}
+
 // @ts-ignore
 export interface AppRouteRecordRaw extends Omit<RouteRecordRaw, 'meta'> {
   name: string;

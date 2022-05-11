@@ -22,12 +22,14 @@
     </template>
   </RouterView>
   <FrameLayout v-if="getCanEmbedIFramePage" />
+  <PartFrameLayout v-if="getCanEmbedPartIFramePage" />
 </template>
 
 <script lang="ts">
   import { computed, defineComponent, unref } from 'vue';
 
   import FrameLayout from '/@/layouts/iframe/index.vue';
+  import PartFrameLayout from '/@/layouts/part-iframe/index.vue';
 
   import { useRootSetting } from '/@/hooks/setting/useRootSetting';
 
@@ -39,12 +41,13 @@
 
   export default defineComponent({
     name: 'PageLayout',
-    components: { FrameLayout },
+    components: { FrameLayout, PartFrameLayout },
     setup() {
       const { getShowMultipleTab } = useMultipleTabSetting();
       const tabStore = useMultipleTabStore();
 
-      const { getOpenKeepAlive, getCanEmbedIFramePage } = useRootSetting();
+      const { getOpenKeepAlive, getCanEmbedIFramePage, getCanEmbedPartIFramePage } =
+        useRootSetting();
 
       const { getBasicTransition, getEnableTransition } = useTransitionSetting();
 
@@ -64,6 +67,7 @@
         getBasicTransition,
         getCaches,
         getCanEmbedIFramePage,
+        getCanEmbedPartIFramePage,
       };
     },
   });

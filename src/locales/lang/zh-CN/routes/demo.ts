@@ -113,6 +113,8 @@ export default {
     antv: 'antVue文档(内嵌)',
     doc: '项目文档(内嵌)',
     docExternal: '项目文档(外链)',
+    partFrame: '嵌入页面的iframe',
+    partFrameNoCache: '不保持状态的嵌入页面的iframe',
   },
   level: { level: '多级菜单' },
   page: {

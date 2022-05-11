@@ -5,7 +5,7 @@ import 'virtual:windi-utilities.css';
 // Register icon sprite
 import 'virtual:svg-icons-register';
 import App from './App.vue';
-import { createApp } from 'vue';
+import { createApp, defineAsyncComponent } from 'vue';
 import { initAppConfigStore } from '/@/logics/initAppConfig';
 import { setupErrorHandle } from '/@/logics/error-handle';
 import { router, setupRouter } from '/@/router';
@@ -17,6 +17,17 @@ import { registerGlobComp } from '/@/components/registerGlobComp';
 
 async function bootstrap() {
   const app = createApp(App);
+
+  const PartFrameAsyncComp = defineAsyncComponent(
+    () => import('/@/views/demo/part-frame/PartFrame.vue'),
+  );
+
+  const PartFrameBlankAsyncComp = defineAsyncComponent(
+    () => import('/@/views/sys/part-frame/PartFrameBlank.vue'),
+  );
+
+  app.component('PartFrame', PartFrameAsyncComp);
+  app.component('PartFrameBlank', PartFrameBlankAsyncComp);
 
   // Configure store
   setupStore(app);

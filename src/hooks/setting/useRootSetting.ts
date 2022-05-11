@@ -21,6 +21,10 @@ export function useRootSetting() {
 
   const getCanEmbedIFramePage = computed(() => appStore.getProjectConfig.canEmbedIFramePage);
 
+  const getCanEmbedPartIFramePage = computed(
+    () => appStore.getProjectConfig.canEmbedPartIFramePage,
+  );
+
   const getPermissionMode = computed(() => appStore.getProjectConfig.permissionMode);
 
   const getShowLogo = computed(() => appStore.getProjectConfig.showLogo);
@@ -77,6 +81,7 @@ export function useRootSetting() {
     getPageLoading,
     getOpenKeepAlive,
     getCanEmbedIFramePage,
+    getCanEmbedPartIFramePage,
     getPermissionMode,
     getShowLogo,
     getUseErrorHandle,
