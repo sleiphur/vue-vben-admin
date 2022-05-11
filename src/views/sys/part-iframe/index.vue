@@ -12,12 +12,11 @@
   import { useLayoutHeight } from '/@/layouts/default/content/useContentViewHeight';
 
   const props = defineProps({
-    partFrameSrc: propTypes.string.def('PartFrameBlank'),
+    partFrameSrc: propTypes.string.def(''),
   });
 
   const topRef = ref(50);
   const heightRef = ref(window.innerHeight);
-  // const frameRef = ref<HTMLFrameElement>();
   const partFrameRef = ref<ComponentPublicInstance>();
   const { headerHeightRef } = useLayoutHeight();
 
@@ -45,7 +44,6 @@
   }
 
   onMounted(() => {
-    console.log(props.partFrameSrc);
     frameSrcRef.value = props.partFrameSrc;
     nextTick(() => {
       useWindowSizeFn(calcHeight, 150, { immediate: true });

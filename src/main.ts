@@ -21,13 +21,7 @@ async function bootstrap() {
   const PartFrameAsyncComp = defineAsyncComponent(
     () => import('/@/views/demo/part-frame/PartFrame.vue'),
   );
-
-  const PartFrameBlankAsyncComp = defineAsyncComponent(
-    () => import('/@/views/sys/part-frame/PartFrameBlank.vue'),
-  );
-
   app.component('PartFrame', PartFrameAsyncComp);
-  app.component('PartFrameBlank', PartFrameBlankAsyncComp);
 
   // Configure store
   setupStore(app);
